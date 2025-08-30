@@ -1,11 +1,11 @@
-<<html>
+<html>
   <head>
     <title>CS 1030 Web Page Project</title>
     <!-- Replace the content in the following line with your name. -->
     <meta name="author" content="SteveT">
   </head>
-  <link rel="stylesheet" href = "style.css">
-  <body>
+  <link rel="stylesheet" href = "styles.css">
+  <body style="background-color: rgb(59, 58, 64);">
     <!-- Replace the lines in this body with your content. -->
     <h1 class ="headline1" > Unit converter 🌡️ </h1>
     
@@ -13,19 +13,55 @@
     <dv class= "Dropdownbox">
     <label for="myList">Enter the units you want to convert</label>
     
-    <select name="myList" id ="myList">
+    <select name="myList" id ="myyList" >
       <option value ="FTC"> Fahrenheit to Celsius</option>
       <option Value ="CTF">Celsius to Fahrenheit</option>
-      <option Value ="FTMT">Foot to Meter</option>
-      <option Value ="MTTF">Meter to Foot</option>
+      <option Value ="FTM">Foot to Meter</option>
+      <option Value ="MTF">Meter to Foot</option>
 
       
     </select>
     </dv>
     <dv class="Value_enter">
-    <p>Enter the unit value: </p>
-    <input type = "text">
+    <p class="Enter_label">Enter the unit value: </p>
+    <input id="theunit" type="text">
     </dv>
-    <p><a href="secondpage.html">Click here</a></p>
+    <button class="myButton" id="clicked" onclick="myFunction()">click here</button>
+    <div class="myoutputp">
+    <p id="output" class = "myoutput"></p>
+  </div>
+    <script >
+      function myFunction(){
+        let user_input = document.getElementById("myyList").value;
+        let n = document.getElementById("theunit").value;
+        let output = document.getElementById("output");
+        let number = + n;
+        
+        
+        if (user_input === "CTF") {
+          let answer = Math.round((number * 9/5) + 32);
+          output.innerText = answer + " °F" ;
+
+        }
+        else if (user_input ==="FTC"){
+          let answer = Math.round((number - 32) * 5/9);
+          output.innerText=answer + "°C";
+
+
+        }
+        else if (user_input ==="FTM"){
+          let answer = Math.round(number/3.281)
+          output.innerText=answer + " Meters";
+
+        }
+        else if(user_input === "MTF"){
+          let answer = Math.round(number*3.281)
+          output.innerText=answer + " Feet";
+        }
+
+
+
+      }
+    </script>
   </body>
 </html>

@@ -1,5 +1,25 @@
-.headline1, .Dropdownbox, .Value_enter{
+.headline1, .Dropdownbox, .Value_enter, .Enter_label{
   text-align:center;
+  color: rgb(21, 104, 182);
+}
+select, button, input, label{
+  display: block;
+  margin: 7 auto;
+} 
+.headline1{
+  font-style: italic;
+  
+}
+button{
+  border-radius: 8px;
+  background-color: rgb(21, 104, 182);
+}
+button:hover{
+  transform: scale(1.05);
+  background-color: rgb(75, 98, 192);
 }
 
-
+.myoutput{
+  text-align: center;
+  color: rgb(21, 104, 182);
+}
